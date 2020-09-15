@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 
 var app = require('./app');
-var port = process.env.PORT || 3977; // PUERTO QUE TENDRA NUESTRO SERVIDOR WEB  DEL BACKEND
+var port = process.env.PORT || 443; // PUERTO QUE TENDRA NUESTRO SERVIDOR WEB  DEL BACKEND
 
 mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://junior:junior1@ds115753.mlab.com:15753/sistema-ventas', (err,res)=>{
