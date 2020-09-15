@@ -42,7 +42,7 @@ function getProducto(req, res) {
 
 	var productoId = req.params.id;
 
-	Producto.findById(productoId, (err, producto) => {
+	Producto.findById(productoId).populate({ path: 'proveedor' }).exec((err, producto) => {
 		if (err) {
 			res.status(500).send({ message: 'Error en la peticion' });
 		} else {
