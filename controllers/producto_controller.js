@@ -18,12 +18,8 @@ function saveProducto(req, res) {
 	producto.material = params.material;
 	producto.envioInternacional = params.envioInternacional;
 	producto.descripcion = params.descripcion;
-	producto.descripcion1 = params.descripcion1;
-	producto.descripcion2 = params.descripcion2;
-	producto.descripcion3 = params.descripcion3;
 	producto.imagen = params.imagen;
 	producto.color = params.color;
-	producto.marca = params.marca;
 	producto.tipo = params.tipo;
 	producto.cantidad = params.cantidad;
 	producto.user= params.user;
@@ -67,7 +63,7 @@ function getProductosxUsuario(req, res) {
 		var find = Producto.find({ user: usuarioId }).sort('_id');
 	}
 
-	find.populate({ path: 'user' }).exec((err, productos) => {
+	find.populate({ path: 'proveedor' }).exec((err, productos) => {
 		if (err) {
 			res.status(500).send({ message: 'Error en la peticion' });
 		} else {
@@ -163,7 +159,7 @@ function getImageFile(req, res) {
 
 function getProductos(req,res){
 	
-	Producto.find({}).sort('_id').exec((err, productos) => {
+	Producto.find({}).sort('_id').populate({ path: 'proveedor' }).exec((err, productos) => {
 	   if(err){
 			   res.status(500).send({ message:'Error en la peticion'});	
 		   }else{

@@ -13,13 +13,9 @@ var ProductoSchema = Schema({
     material:String,
 	envioInternacional:String,
 	descripcion:String,
-	descripcion1:String,
-	descripcion2:String,
-	descripcion3:String,
 	tipo:String,
 	imagen:String,
 	color:String,
-	marca:String,
 	estado:{type:String,default:"Activo"},
 	user: {type: Schema.ObjectId, ref:'User'},
 	proveedor: {type: Schema.ObjectId, ref:'Proveedor'}
