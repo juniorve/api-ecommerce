@@ -6,9 +6,10 @@ var app = require('./app');
 var port = process.env.PORT || 3977; // PUERTO QUE TENDRA NUESTRO SERVIDOR WEB  DEL BACKEND
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://junior:junior1@ds115753.mlab.com:15753/sistema-ventas', (err,res)=>{
+// mongoose.connect('mongodb://junior:junior1@ds115753.mlab.com:15753/sistema-ventas', (err,res)=>{
+	mongoose.connect('mongodb://sandra:Holamundo0@ds021172.mlab.com:21172/db-ecommerce', (err,res)=>{
 //mongoose.createConnection('mongodb://localhost:27017/evaluacionDB', (err,res)=>{
-
+	
 //mongoose.connect('mongodb://localhost:27017/proyectoIhcDB', (err,res)=>{
 	if(err){ 
 		console.log('error en la conexion');
